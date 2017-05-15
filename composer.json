@@ -1,0 +1,25 @@
+{
+    "name": "banbans/laravel-ckeditor",
+    "description": "ckeditor for laravel 5",
+    "type": "library",
+    "require": {
+        "php": ">=5.4",
+        "illuminate/support": "5.*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "banbans",
+            "email": "529303320@qq.com"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "src/controller"
+        ],
+        "psr-4": {
+            "Banbans\\Ckeditor\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
