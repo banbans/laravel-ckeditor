@@ -22,8 +22,9 @@ class CkeditorController extends Controller
            $destinationPath = 'uploads/images/';  //图片存放路径
            $extension = $file->getClientOriginalExtension();  //获得文件后缀  
            $fileName = str_random(10) . '.' . $extension;  //创建图片名字  
-           $result = $file->move($destinationPath, $fileName); //存储图片到路径  
-           echo url('') . '/' .$result ; //输出图片网站中浏览路径  
+           $file->move($destinationPath, $fileName); //存储图片到路径
+		   $url='/'.$destinationPath.$fileName;//文件地址路径
+		   return "<script type=\"text/javascript\">window.parent.CKEDITOR.tools.callFunction($request->CKEditorFuncNum, '{$url}', '');</script>";; //输出图片网站中浏览路径
   
        }
 	}

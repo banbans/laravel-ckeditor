@@ -47,8 +47,10 @@ class Ckeditor
     /**
      *	编辑器的JS资源
      */
-    public static function js() {
-        
+    public static function js($id=null) {
+        if(is_null($id)){
+            $id=self::$id;
+        }
         echo '<script type="text/javascript" charset="utf-8" src="'.asset('assets/ckeditor/ckeditor.js').'"></script>'."\r\n";
         echo '<script type="text/javascript">'."\r\n";
         echo "CKEDITOR.replace('".self::$id."', { customConfig: '".route('ckeditor.config')."'});\r\n";
