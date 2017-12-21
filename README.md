@@ -32,7 +32,7 @@ php artisan vendor:publish --provider="Banbans\Ckeditor\EditorServiceProvider" -
 ```php
 //调用编辑器
 {{ Ckeditor::content('内容', ['id'=>'editor', 'class'=>'text-editor']) }}
-//调用JS
-{{ Ckeditor::js() }}
+//调用JS 多次调用编辑器可以多次调用js，传入id就可以
+{{ Ckeditor::js('editor') }}
 ```
 
